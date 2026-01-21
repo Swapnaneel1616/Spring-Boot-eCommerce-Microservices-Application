@@ -1,78 +1,70 @@
-This is the Official repository of **Spring Boot Microservices Professional eCommerce Masterclass** on Udemy
+🛒 Spring Boot eCommerce Microservices Application
+📖 Overview
+This repository hosts a production-grade eCommerce backend system built using a Microservices Architecture. It is designed to demonstrate high scalability, fault tolerance, and loose coupling between services. The system utilizes Spring Boot for core services, Docker for containerization, and implements both synchronous (REST) and asynchronous (RabbitMQ/Kafka) communication patterns.
 
-# The Ultimate Java and Spring Boot Mastery
+This project serves as a comprehensive proof-of-concept for building cloud-native distributed systems handling complex business flows like order management, inventory updates, and notification dispatching.
 
-Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 23+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
+🏗 System Architecture
+The application is decomposed into independent, deployable microservices organized by business domain:
+Service,            Description,Port
+Api Gateway,        Entry point for all client traffic; handles routing and load balancing.,8080
+Eureka Server,      Service Discovery server (Netflix Eureka) for dynamic service registration.,8761
+Config Server,      Centralized configuration management for all microservices.,8888
+Product Service,    "Manages product inventory, catalog data, and stock checks.",8081
+Order Service,       Handles order placement and transactions.,8082
+User Service,        Manages user profiles and authentication data.,8083
+Notification-Service,"Listens for events (e.g., OrderPlaced) and triggers emails/alerts.",8084
 
-## 🎓 Learning Roadmap
-
-Most of the courses below are available in **Udemy For Business**, so if you have subscription - you can get FREE access.
-Here’s a structured path to enhance your skills with detailed courses available:
-
-1. **[Spring Boot Full Stack By Building Complex Projects Step by Step](https://link.embarkx.com/spring-boot) (80+ Hours of Content)**
-2. **[Master Spring Boot Microservices](https://link.embarkx.com/microservices) (50+ Hours of Content)**
-3. **[Learn Java with 60+ Hours of Content](http://link.embarkx.com/java) (60+ Hours of Content)**
-4. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security) (34+ Hours of Content)**
-5. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij) (3+ Hours of Content)**
-
-
-## 🌟 With All Our Courses You Gain Access To
-
-- 📝 **Notes:** Detailed and downloadable notes to accompany each lesson.
-- 💻 **Source Code:** Full access to the source code used in the tutorials.
-- 🤔 **Doubt Solving:** Responsive instructor and community support.
-- 🎥 **High-Quality HD Videos:** Easy to understand, high-definition video tutorials.
-- 🔄 **Free Lifetime Updates:** Continuous updates to course content at no extra cost.
-
-## 📚 Why Choose This Mastery Series?
-
-With this series, you're not just learning; you're preparing to dominate the field of Java and Spring Boot development. Our structured learning path ensures that you build your skills progressively, with each course designed to build on the knowledge gained from the previous one.
-
-### Join Us Now!
-
-Start your journey today to become a master at Java and Spring Boot. Our community and expert instructors are here to support your learning every step of the way. **Enroll and start building your future, today!**
+🚀 Key Features
+Microservices Architecture: Decoupled services utilizing Spring Cloud for coordination.
 
 
+Event-Driven Communication: Implemented Apache Kafka and RabbitMQ for asynchronous messaging (e.g., sending notifications after order placement).
 
 
+Centralized Security: Secured with Keycloak (OAuth2/OpenID Connect) for robust identity management and role-based access control (RBAC).
 
-# Usage Policy for Course Materials
 
-## Instructor Information
+Service Discovery: Dynamic registration of services using Netflix Eureka.
 
-**Instructor:** Faisal Memon  
-**Company:** [EmbarkX.com](http://www.embarkx.com)
+API Gateway: Spring Cloud Gateway acting as a single edge service for routing, filtering, and cross-cutting concerns.
 
-## Policy Overview
 
-This document outlines the guidelines and restrictions concerning the use of course materials provided by EmbarkX, including but not limited to PDF presentations, code samples, and video tutorials.
+Resiliency: Implemented Circuit Breakers (Resilience4j) to handle cascading failures and ensure system uptime.
 
-### 1. Personal Use Only
 
-The materials provided in this course are intended for **your personal use only**. They are to be used solely for the purpose of learning and completing this course.
+Observability Stack: Integrated distributed tracing and metrics using Zipkin/Jaeger, Prometheus, and Grafana for real-time monitoring.
 
-### 2. No Unauthorized Sharing or Distribution
 
-You are **not permitted** to share, distribute, or publicly post any course materials on any websites, social media platforms, or other public forums without prior written consent from the instructor.
+Containerization: Fully dockerized services with docker-compose for one-click deployment.
 
-### 3. Intellectual Property
+🛠️ Technology Stack
+Languages: Java 17+, JavaScript
 
-All course materials are protected by copyright laws and are the intellectual property of Faisal Memon and EmbarkX. Unauthorized use, reproduction, or distribution of these materials is **strictly prohibited**.
+Frameworks: Spring Boot 3.x, Spring Cloud (Gateway, Config, Stream, OpenFeign)
 
-### 4. Reporting Violations
+Databases (Polyglot Persistence): PostgreSQL, MongoDB, MySQL
 
-If you become aware of any unauthorized sharing or distribution of course materials, please report it immediately to [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com).
+Message Brokers: Apache Kafka, RabbitMQ
 
-### 5. Legal Action
+Containerization: Docker, Docker Compose
 
-We reserve the right to take legal action against individuals or entities found to be violating this usage policy.
+Security: Keycloak (OAuth2 resource server)
 
-## Thank You
+Build Tool: Maven
 
-Thank you for respecting these guidelines and helping us maintain the integrity of our course materials.
+⚡ Getting Started
+Prerequisites
+Java 17 or higher
 
-## Contact Information
+Docker & Docker Compose
 
-- **Email:** [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com)
-- **Website:** [www.embarkx.com](http://www.embarkx.com)
+Maven
 
+
+👨‍💻 Author
+Swapnaneel Chatterjee
+
+GitHub: Swapnaneel1616
+
+LinkedIn: Swapnaneel Chatterjee
